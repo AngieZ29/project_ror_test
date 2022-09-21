@@ -1,0 +1,12 @@
+<table class="border-collapse border border-slate-600 ...">
+  <thead>
+    <tr>
+      <th class="border border-slate-300 ...">Nombre Banco</th>
+    </tr>
+      <% @banks.each do |bank| %>
+    <tr>
+      <td class="border border-slate-300 ..."><%= bank.name %></td>
+    </tr>
+      <% end %>
+  </thead>
+</table>
