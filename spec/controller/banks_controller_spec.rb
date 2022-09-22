@@ -48,4 +48,43 @@ RSpec.describe BanksController, type: :controller do
       end
     end
   end
+
+  describe 'PUT#update' do
+    let!(:bank) { create(:bank) }
+
+    context 'when the name value is updated' do
+      before do
+        put :update, params: { id: bank.id, bank: { name: 'New Bank' } }
+      end
+
+      it 'should redirect to index' do
+        expect(response).to redirect_to(banks_path)
+      end
+
+      it 'should return the name field updated' do
+        expect(assigns(:bank).name).to eq('New Bank')
+      end
+    end
+
+    context 'when the name value is not updated' do
+      before do
+        put :update, params: { id: 'x', bank: { name: 'New Bank' } }
+      end
+
+      it 'should return not_found' do
+        expect(JSON.parse(response.body)['error']).to eq("Couldn't find Bank with 'id'=x")
+        expect(response).to have_http_status(:not_found)
+      end
+    end
+
+    context 'when the name value is not updated' do
+      before do
+        put :update, params: { id: bank.id, bank: { name: nil } }
+      end
+
+      it 'should return not_found' do
+        expect(response).to have_http_status(:unprocessable_entity)
+      end
+    end
+  end
 end
