@@ -1,8 +1,8 @@
 class BanksController < ApplicationController
-  before_action :find_bank, only: [:show, :edit, :update]
+  before_action :find_bank, only: [:show, :edit, :update, :destroy]
 
   rescue_from ActiveRecord::RecordInvalid do |e|
-    render json: { error: e.message }, status: :unprocessable_entity
+    render partial: 'error', status: :unprocessable_entity
   end
 
   def index
@@ -29,6 +29,11 @@ class BanksController < ApplicationController
 
   def update
     @bank.update!(val_params)
+    redirect_to banks_path
+  end
+
+  def destroy
+    @bank.destroy
     redirect_to banks_path
   end
 

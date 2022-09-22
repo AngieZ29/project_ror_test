@@ -1,0 +1,12 @@
+<%= simple_form_for @bank do |f| %>
+  <div>
+    <%= f.full_error :name %>
+  </div>
+  <br>
+  <div>
+    <%= link_to 'Volver', edit_bank_path,
+      class: 'inline-block px-2 py-2.5 bg-blue-500 text-white font-medium
+        text-xs leading-tight camelcase rounded shadow-md hover:bg-blue-700 hover:shadow-lg
+        focus:bg-blue-700 active:bg-blue-800' %>
+  </div>
+<% end %>

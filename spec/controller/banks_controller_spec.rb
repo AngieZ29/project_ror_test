@@ -83,7 +83,36 @@ RSpec.describe BanksController, type: :controller do
       end
 
       it 'should return not_found' do
+        expect(response).to render_template(:partial => '_error')
         expect(response).to have_http_status(:unprocessable_entity)
+      end
+    end
+  end
+
+  describe 'DELETE#destroy' do
+    let!(:bank) { create(:bank) }
+
+    context 'when the row is deleted' do
+      before do
+        delete :destroy, params: { id: bank.id }
+      end
+
+      it 'should return id bank' do
+        expect(assigns(:bank).id).to eq(bank.id)
+      end
+
+      it 'should redirect to index' do
+        expect(response).to redirect_to(banks_path)
+      end
+    end
+
+    context 'when the row is not deleted' do
+      before do
+        delete :destroy, params: { id: 'x' }
+      end
+
+      it 'should return not_found' do
+        expect(JSON.parse(response.body)['error']).to eq("Couldn't find Bank with 'id'=x")
       end
     end
   end
