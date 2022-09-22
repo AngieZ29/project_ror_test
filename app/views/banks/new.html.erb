@@ -1,0 +1,9 @@
+<div>
+  <h1>Crear Banco</h1>
+  <table class='border-collapse border border-slate-600 ...'>
+    <%= simple_form_for @bank do |f| %>
+      <%= f.input :name, label: 'Nombre Banco' %>
+      <%= f.submit 'Guardar' %>
+    <% end %>
+  </table>
+</div>

@@ -1,12 +1,18 @@
-<table class="border-collapse border border-slate-600 ...">
-  <thead>
-    <tr>
-      <th class="border border-slate-300 ...">Nombre Banco</th>
-    </tr>
-      <% @banks.each do |bank| %>
-    <tr>
-      <td class="border border-slate-300 ..."><%= bank.name %></td>
-    </tr>
-      <% end %>
-  </thead>
-</table>
+<div class = 'container mx-auto'>
+  <h1>Listado Bancos</h1>
+  <br>
+  <table>
+    <thead>
+      <tr>
+        <th class='border border-slate-300 ...'>Nombre Banco</th>
+      </tr>
+        <% @banks.each do |bank| %>
+      <tr>
+        <td class='border border-slate-300 ...'><%= bank.name %></td>
+      </tr>
+        <% end %>
+    </thead>
+  </table>
+  <br>
+  <%= link_to 'Crear Banco', new_bank_path(@bank) %>
+</div>
