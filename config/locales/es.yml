@@ -1,0 +1,29 @@
+---
+es:
+  banks:
+    edit:
+      bank_edit: Editar Banco
+    error:
+      bank_return: Volver
+    form:
+      bank_name: Nombre Banco
+      bank_return: Volver
+      bank_save: Guardar
+    index:
+      add_bank: "+ Agregar Banco"
+      bank_actions: Acciones
+      bank_id: ID
+      bank_list: Listado de Bancos
+      bank_name: Nombre
+      delete: Borrar
+      edit: Editar
+      show: Ver
+    new:
+      bank_add: Agregar Banco
+    show:
+      bank_create_date: Fecha Creación
+      bank_detail: Detalle Banco
+      bank_id: Banco
+      bank_name: Nombre
+      bank_return: Volver
+      bank_update_date: Fecha Última Actualización
