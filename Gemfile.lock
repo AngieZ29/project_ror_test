@@ -168,6 +168,9 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.4.3)
       loofah (~> 2.3)
+    rails-i18n (7.0.5)
+      i18n (>= 0.7, < 2)
+      railties (>= 6.0.0, < 8)
     railties (7.0.4)
       actionpack (= 7.0.4)
       activesupport (= 7.0.4)
@@ -271,13 +274,13 @@ DEPENDENCIES
   capybara (>= 3.26)
   factory_bot_rails
   faker
-  i18n
   jbuilder (~> 2.7)
   listen (~> 3.3)
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
   rails (~> 7.0.4)
   rails-controller-testing
+  rails-i18n
   rspec-rails
   sass-rails (>= 6)
   selenium-webdriver (>= 4.0.0.rc1)
