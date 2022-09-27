@@ -1,5 +1,5 @@
 class SuppliersController < ApplicationController
-  before_action :find_supplier, only: [:edit, :update, :destroy]
+  before_action :find_supplier, only: [:show, :edit, :update, :destroy]
 
   rescue_from ActiveRecord::RecordInvalid do |e|
     render partial: 'error', status: :unprocessable_entity
@@ -7,6 +7,9 @@ class SuppliersController < ApplicationController
 
   def index
     @suppliers = Supplier.order(:name).page params[:page]
+  end
+
+  def show
   end
 
   def new

@@ -45,6 +45,9 @@ es:
       supplier_save: Guardar
     index:
       bank: Banco
+      delete: Borrar
+      edit: Editar
+      show: Ver
       supplier_actions: Acciones
       supplier_add: "+ Agregar Proveedor"
       supplier_bank_account: Cuenta de Banco
@@ -56,3 +59,15 @@ es:
       without_data: Sin información en la tabla
     new:
       add_supplier: Ingresar Proveedor
+    show:
+      bank: Bank
+      edit: Edit
+      supplier_actions: Acciones
+      supplier_bank_account: Cuenta de Banco
+      supplier_list: Proveedor
+      supplier_name: Nombre
+      supplier_name_contact: Nombre Contacto
+      supplier_nit: Nit
+      supplier_phone_number: Número de Celular
+      supplier_return: Volver
+      without_data: Sin Datos

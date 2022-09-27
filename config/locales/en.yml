@@ -45,6 +45,8 @@ en:
       supplier_save: Supplier save
     index:
       bank: Bank
+      delete: Delete
+      edit: Edit
       supplier_actions: Supplier actions
       supplier_add: Supplier add
       supplier_bank_account: Supplier bank account
@@ -56,3 +58,16 @@ en:
       without_data: Without data
     new:
       add_supplier: Add supplier
+    show:
+      bank: Bank
+      edit: Edit
+      show: Show
+      supplier_actions: Supplier actions
+      supplier_bank_account: Supplier bank account
+      supplier_list: Supplier list
+      supplier_name: Supplier name
+      supplier_name_contact: Supplier name contact
+      supplier_nit: Supplier nit
+      supplier_phone_number: Supplier phone number
+      supplier_return: Supplier return
+      without_data: Without data
