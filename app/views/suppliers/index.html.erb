@@ -34,24 +34,24 @@
             <%= t('.supplier_actions') %>
           </td>
         </tr>
-        <% @suppliers.each do |s| %>
+        <% @suppliers.each do |supplier| %>
           <tr class="border-b">
             <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-              <%= s.name %>
+              <%= supplier.name %>
             </td>
             <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-              <%= s.name_contact %>
+              <%= supplier.name_contact %>
             </td>
             <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-              <%= s.phone_number.empty? ? t('.without_data') : s.phone_number%>
-            </td>
-
-            <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-              <%= s.banks.first.name %>
+              <%= supplier.phone_number.empty? ? t('.without_data') : supplier.phone_number%>
             </td>
 
             <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-              <%= s.bank_account %>
+              <%= supplier.banks.first.name %>
+            </td>
+
+            <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+              <%= supplier.bank_account %>
             </td>
             <td>
               <button type="button"
@@ -64,7 +64,7 @@
                 class="inline-block px-1 py-2.5 bg-green-500 text-white font-medium text-xs
                   leading-tight camelcase rounded shadow-md hover:bg-green-700 hover:shadow-lg
                   focus:bg-green-700 active:bg-green-800">
-                <%= link_to 'Editar' %>
+                <%= link_to t('.edit'), edit_supplier_path(supplier) %>
               </button>
               <button type="button"
                 class="inline-block px-1 py-2.5 bg-red-500 text-white font-medium text-xs
