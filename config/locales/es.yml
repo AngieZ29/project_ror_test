@@ -10,7 +10,7 @@ es:
       bank_return: Volver
       bank_save: Guardar
     index:
-      add_bank: "+ Agregar Banco"
+      add_bank: + Agregar Banco
       bank_actions: Acciones
       bank_id: ID
       bank_list: Listado de Bancos
@@ -28,6 +28,16 @@ es:
       bank_return: Volver
       bank_update_date: Fecha Última Actualización
   suppliers:
+    index:
+      bank: Banco
+      supplier_actions: Acciones
+      supplier_add: + Agregar Proveedor
+      supplier_bank_account: Cuenta de Banco
+      supplier_list: Listado Proveedores
+      supplier_name: Nombre
+      supplier_name_contact: Nombre Contacto
+      supplier_nit: Nit
+      supplier_phone_number: Número de Celular
     new:
       add_bank_account: Ingresar Cuenta de Banco
       add_contact: Ingresar Contacto

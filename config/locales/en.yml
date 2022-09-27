@@ -28,6 +28,16 @@ en:
       bank_return: Return
       bank_update_date: Update Date
   suppliers:
+    index:
+      bank: Bank
+      supplier_actions: Supplier actions
+      supplier_add: Supplier add
+      supplier_bank_account: Supplier bank account
+      supplier_list: Supplier list
+      supplier_name: Supplier name
+      supplier_name_contact: Supplier name contact
+      supplier_nit: Supplier nit
+      supplier_phone_number: Supplier phone number
     new:
       add_bank_account: Add bank account
       add_contact: Add contact
