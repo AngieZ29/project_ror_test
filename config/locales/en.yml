@@ -29,7 +29,12 @@ en:
       bank_update_date: Update Date
   suppliers:
     new:
-      supplier_add: Supplier add
+      add_bank_account: Add bank account
+      add_contact: Add contact
+      add_name: Add name
+      add_nit: Add nit
+      add_supplier: Add supplier
+      bank: Bank
       supplier_bank_account: Supplier bank account
       supplier_name: Supplier name
       supplier_name_contact: Supplier name contact

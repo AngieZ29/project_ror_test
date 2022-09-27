@@ -8,9 +8,7 @@ class Supplier < ApplicationRecord
   validates :nit, format: { with: /\A((\d){9}(-)(\d){1})\z/ }
   validates :phone_number, length: { maximum: 10 }
   validates :bank_account, length: { maximum: 15 }
-  validates_uniqueness_of :bank_account
-  validates_associated :bank_suppliers
-  validates_associated :banks
+  validates_uniqueness_of :bank_account, message: ': Cuenta de Banco ya existe'
 
   def banks_attributes=banks_attributes
     banks_attributes.values.each do |bank|

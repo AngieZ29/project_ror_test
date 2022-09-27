@@ -11,7 +11,7 @@ class SuppliersController < ApplicationController
   def create
     @supplier = Supplier.new(val_params)
 
-    if @supplier.save && !val_params['banks_attributes']['0']['id'].empty?
+    if @supplier.save
 
       redirect_to suppliers_path
     else

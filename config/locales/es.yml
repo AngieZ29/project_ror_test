@@ -29,7 +29,12 @@ es:
       bank_update_date: Fecha Última Actualización
   suppliers:
     new:
-      supplier_add: Ingresar Proveedor
+      add_bank_account: Ingresar Cuenta de Banco
+      add_contact: Ingresar Contacto
+      add_name: Ingresar Nombre
+      add_nit: Ingresar Nit
+      add_supplier: Ingresar Proveedor
+      bank: Banco
       supplier_bank_account: Cuenta de Banco
       supplier_name: Nombre
       supplier_name_contact: Nombre Contacto
