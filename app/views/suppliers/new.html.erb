@@ -1,0 +1,65 @@
+<div>
+  <h1 class="font-bold text-3xl"><%= t('.supplier_add') %></h1>
+  <br>
+  <div>
+    <%= simple_form_for(@supplier) do |f| %>
+      <div>
+        <table>
+          <tr>
+            <%= f.input :name, label: t('.supplier_name'),
+              class: 'form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white
+                bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0
+                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none',
+              placeholder: 'Ingresar Nombre' %>
+          </tr>
+          <tr>
+            <%= f.input :nit, label: t('.supplier_nit'),
+              class: 'form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white
+                bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0
+                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none',
+              placeholder: 'Ingresar Nit' %>
+          </tr>
+          <tr>
+            <%= f.input :name_contact, label: t('.supplier_name_contact'),
+              class: 'form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white
+                bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0
+                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none',
+              placeholder: 'Ingresar Contacto' %>
+          </tr>
+          <tr>
+            <%= f.input :phone_number, label: t('.supplier_phone_number'),
+              class: 'form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white
+                bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0
+                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none',
+              placeholder: 'Ingresar Número de Celular' %>
+          </tr>
+          <tr>
+            <%= f.simple_fields_for :banks, Bank.new do |b| %>
+              <%= b.input :id, label: 'Banco', collection: Bank.all, required: true %>
+            <% end %>
+          </tr>
+          <tr>
+            <%= f.input :bank_account, label: t('.supplier_bank_account'),
+              class: 'form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white
+                bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0
+                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none',
+              placeholder: 'Ingresar Cuenta de Banco' %>
+          </tr>
+        </table>
+      </div>
+      <br>
+      <div>
+        <tr>
+          <td><%= f.submit t('.supplier_save'),
+            class: 'inline-block px-2 py-2.5 bg-green-500 text-white font-medium
+              text-xs leading-tight camelcase rounded shadow-md hover:bg-green-700 hover:shadow-lg
+              focus:bg-green-700 active:bg-green-800' %></td>
+          <td><%= link_to t('.supplier_return'), suppliers_path,
+            class: 'inline-block px-2 py-2.5 bg-blue-500 text-white font-medium
+              text-xs leading-tight camelcase rounded shadow-md hover:bg-blue-700 hover:shadow-lg
+              focus:bg-blue-700 active:bg-blue-800' %></td>
+        </tr>
+      </div>
+    <% end %>
+  </div>
+</div>

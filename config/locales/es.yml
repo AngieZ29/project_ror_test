@@ -27,3 +27,13 @@ es:
       bank_name: Nombre
       bank_return: Volver
       bank_update_date: Fecha Última Actualización
+  suppliers:
+    new:
+      supplier_add: Ingresar Proveedor
+      supplier_bank_account: Cuenta de Banco
+      supplier_name: Nombre
+      supplier_name_contact: Nombre Contacto
+      supplier_nit: Nit
+      supplier_phone_number: Número de Celular
+      supplier_return: Volver
+      supplier_save: Guardar

@@ -63,4 +63,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'simple_form'
 
+
+gem 'simple_form-tailwind'
+
 gem "tailwindcss-rails", "~> 2.0"

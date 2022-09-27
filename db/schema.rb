@@ -10,10 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_23_221729) do
-  create_table "bank_suppliers", id: false, force: :cascade do |t|
-    t.integer "bank_id"
-    t.integer "supplier_id"
+ActiveRecord::Schema[7.0].define(version: 2022_09_26_143757) do
+  create_table "bank_suppliers", force: :cascade do |t|
+    t.integer "bank_id", null: false
+    t.integer "supplier_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["bank_id"], name: "index_bank_suppliers_on_bank_id"
@@ -36,4 +36,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_23_221729) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "bank_suppliers", "banks"
+  add_foreign_key "bank_suppliers", "suppliers"
 end
