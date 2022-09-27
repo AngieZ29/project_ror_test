@@ -27,3 +27,18 @@ en:
       bank_name: Name
       bank_return: Return
       bank_update_date: Update Date
+  suppliers:
+    new:
+      add_bank_account: Add bank account
+      add_contact: Add contact
+      add_name: Add name
+      add_nit: Add nit
+      add_supplier: Add supplier
+      bank: Bank
+      supplier_bank_account: Supplier bank account
+      supplier_name: Supplier name
+      supplier_name_contact: Supplier name contact
+      supplier_nit: Supplier nit
+      supplier_phone_number: Supplier phone number
+      supplier_return: Supplier return
+      supplier_save: Supplier save

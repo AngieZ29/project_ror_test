@@ -1,0 +1,48 @@
+<div  class="mx-auto md:w-2/3 w-full">
+  <h1 class="font-bold text-3xl"><%= t('.add_supplier') %></h1>
+  <%= simple_form_for(@supplier) do |f| %>
+    <div class="my-5">
+      <%= f.input :name, label: t('.supplier_name'),
+        class: 'block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full',
+        placeholder: t('.add_name'), required: true %>
+    </div>
+
+    <div class="my-5">
+      <%= f.input :nit, label: t('.supplier_nit'),
+        class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full",
+        placeholder: t('.add_nit') %>
+    </div>
+
+    <div class="my-5">
+      <%= f.input :name_contact, label: t('.supplier_name_contact'),
+        class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full",
+        placeholder: t('.add_contact'), required: true %>
+    </div>
+
+    <div class="my-5">
+      <%= f.input :phone_number, label: t('.supplier_phone_number'),
+        class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full",
+        placeholder: t('.add_contact') %>
+    </div>
+
+    <div class="my-5">
+      <%= f.simple_fields_for :banks, Bank.new do |b| %>
+        <%= b.input :id, label: t('.bank'), collection: Bank.all, required: true %>
+      <% end %>
+    </div>
+
+    <div class="my-5">
+      <%= f.input :bank_account, label: t('.supplier_bank_account'),
+        class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full",
+        placeholder: t('.add_bank_account'), required: true %>
+    </div>
+
+    <div class="my-5">
+      <%= f.submit t('.supplier_save'),
+        class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+      <%= link_to t('.supplier_return'), suppliers_path,
+        class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    </div>
+
+  <% end %>
+</div>
