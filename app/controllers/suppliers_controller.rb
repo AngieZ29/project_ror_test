@@ -1,5 +1,5 @@
 class SuppliersController < ApplicationController
-  before_action :find_supplier, only: [:edit, :update]
+  before_action :find_supplier, only: [:edit, :update, :destroy]
 
   rescue_from ActiveRecord::RecordInvalid do |e|
     render partial: 'error', status: :unprocessable_entity
@@ -29,6 +29,11 @@ class SuppliersController < ApplicationController
 
   def update
     @supplier.update!(val_params)
+    redirect_to suppliers_path
+  end
+
+  def destroy
+    @supplier.destroy
     redirect_to suppliers_path
   end
 

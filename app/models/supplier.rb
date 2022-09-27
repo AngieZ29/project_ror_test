@@ -1,5 +1,5 @@
 class Supplier < ApplicationRecord
-  has_many :bank_suppliers
+  has_many :bank_suppliers, dependent: :destroy
   has_many :banks, through: :bank_suppliers
 
   accepts_nested_attributes_for :banks, reject_if: :all_blank

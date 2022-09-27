@@ -94,4 +94,32 @@ RSpec.describe SuppliersController, type: :controller do
       end
     end
   end
+
+  describe 'DELETE#destroy' do
+    let!(:supplier) { create(:supplier) }
+
+    context 'when the row is deleted' do
+      before do
+        delete :destroy, params: { id: supplier.id }
+      end
+
+      it 'should return id supplier' do
+        expect(assigns(:supplier).id).to eq(supplier.id)
+      end
+
+      it 'should redirect to index' do
+        expect(response).to redirect_to(suppliers_path)
+      end
+    end
+
+    context 'when the row is not deleted' do
+      before do
+        delete :destroy, params: { id: 'x' }
+      end
+
+      it 'should return not_found' do
+        expect(JSON.parse(response.body)['error']).to eq("Couldn't find Supplier with 'id'=x")
+      end
+    end
+  end
 end
