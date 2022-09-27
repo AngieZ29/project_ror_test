@@ -38,6 +38,7 @@ en:
       supplier_name_contact: Supplier name contact
       supplier_nit: Supplier nit
       supplier_phone_number: Supplier phone number
+      without_data: Without data
     new:
       add_bank_account: Add bank account
       add_contact: Add contact

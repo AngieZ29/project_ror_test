@@ -34,7 +34,7 @@
             <%= t('.supplier_actions') %>
           </td>
         </tr>
-        <% @supplier.each do |s| %>
+        <% @suppliers.each do |s| %>
           <tr class="border-b">
             <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
               <%= s.name %>
@@ -43,7 +43,7 @@
               <%= s.name_contact %>
             </td>
             <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-              <%= s.phone_number %>
+              <%= s.phone_number.empty? ? t('.without_data') : s.phone_number%>
             </td>
 
             <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
@@ -78,5 +78,9 @@
       </thead>
     </table>
     <br>
+  </div>
+  <br>
+  <div class="flex justify-between left">
+    <p class="font-bold text-3xl"> <%= paginate @suppliers %></p>
   </div>
 </div>

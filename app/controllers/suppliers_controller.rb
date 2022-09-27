@@ -1,6 +1,6 @@
 class SuppliersController < ApplicationController
   def index
-    @supplier = Supplier.all
+    @suppliers = Supplier.order(:name).page params[:page]
   end
 
   def new
