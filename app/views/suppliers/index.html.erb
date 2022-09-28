@@ -1,0 +1,87 @@
+<div>
+  <h1 class="font-bold text-3xl"> <%= t('.supplier_list') %></h1>
+  <br>
+  <div class="flex space-x-2 justify-left">
+    <button type="button"
+      class="inline-block px-2 py-2.5 bg-blue-500 text-white font-medium text-xs leading-tight
+        camelcase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700
+        active:bg-blue-800">
+      <%= link_to t('.supplier_add'), new_supplier_path(@supplier) %>
+    </button>
+  </div>
+  <br>
+  <div class="flex justify-between left">
+    <br>
+    <table class="text-left">
+      <thead class="border-b">
+        <tr class="border-b bg-blue-100 border-blue-200">
+          <td class="text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap">
+            <%= t('.supplier_name') %>
+          </td>
+          <td class="text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap">
+            <%= t('.supplier_name_contact') %>
+          </td>
+          <td class="text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap">
+            <%= t('.supplier_phone_number') %>
+          </td>
+          <td class="text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap">
+            <%= t('.bank') %>
+          </td>
+          <td class="text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap">
+            <%= t('.supplier_bank_account') %>
+          </td>
+          <td class="text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap text-center">
+            <%= t('.supplier_actions') %>
+          </td>
+        </tr>
+        <% @suppliers.each do |supplier| %>
+          <tr class="border-b">
+            <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+              <%= supplier.name %>
+            </td>
+            <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+              <%= supplier.name_contact %>
+            </td>
+            <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+              <%= supplier.phone_number.empty? ? t('.without_data') : supplier.phone_number%>
+            </td>
+
+            <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+              <%= supplier.banks.first.name %>
+            </td>
+
+            <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+              <%= supplier.bank_account %>
+            </td>
+            <td>
+              <button type="button"
+                class="inline-block px-1 py-2.5 bg-yellow-500 text-white font-medium text-xs
+                  leading-tight camelcase rounded shadow-md hover:bg-yellow-700 hover:shadow-lg
+                  focus:bg-yellow-700 active:bg-yellow-800">
+                <%= link_to t('.show'), supplier_path(supplier) %>
+              </button>
+              <button type="button"
+                class="inline-block px-1 py-2.5 bg-green-500 text-white font-medium text-xs
+                  leading-tight camelcase rounded shadow-md hover:bg-green-700 hover:shadow-lg
+                  focus:bg-green-700 active:bg-green-800">
+                <%= link_to t('.edit'), edit_supplier_path(supplier) %>
+              </button>
+              <button type="button"
+                class="inline-block px-1 py-2.5 bg-red-500 text-white font-medium text-xs
+                  leading-tight camelcase rounded shadow-md hover:bg-red-700 hover:shadow-lg
+                  focus:bg-red-700 active:bg-red-800">
+                <%= link_to t('.delete'), supplier, method: :delete,
+                  data: { confirm: 'Estas seguro de borrarlo?' } %>
+              </button>
+            </td>
+          </tr>
+        <% end %>
+      </thead>
+    </table>
+    <br>
+  </div>
+  <br>
+  <div class="flex justify-between left">
+    <p class="font-bold text-3xl"> <%= paginate @suppliers %></p>
+  </div>
+</div>
